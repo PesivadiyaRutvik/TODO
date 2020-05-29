@@ -1,0 +1,26 @@
+.done{
+  text-decoration-line :line-through;
+}
+.small {
+  font-size: 12px !important;
+}
+@media (max-width:1200px) {
+  .smallScreen {
+    display: flex !important;
+  }
+  .smallScreen input{
+    width: 10%;
+  }
+  .smallScreen label{
+    width: 80%;
+  }
+  .smallScreen button {
+    width: 10%;
+  }
+  .smallScreen div {
+    text-align: center !important;
+  }
+  .smallScreen div button {
+    width: 100%;
+  }
+}

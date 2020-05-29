@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="jumbotron ">
+    <h1 class="display-4 text-center">Todos</h1>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <input [(ngModel)]="item.name" (keyup.enter)="addTask()" type="text" placeholder="enter task here...."
+               class="form-control"/>
+        <div class="card mt-5">
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item row text-center " *ngIf="displayItems.length==0">
+              no task found
+            </li>
+
+            <li *ngFor="let task of displayItems ; let i = index" class="list-group-item row d-flex smallScreen">
+              <input (change)="changestatus(i)" [checked]="task.isDone" type="checkbox"
+                     class=" col-md-1 col-sm-3 .col-3 m-auto"
+                     id="exampleCheck1"/>
+              <label class="col-md-10 col-sm-6 .col-6 m-auto" [ngClass]="{'done':task.isDone}">
+                {{task.name}}</label>
+              <button class="btn text-danger col-md-1 col-sm-3 .col-3"
+                      (click)="deleteTask(i)"><i class="far fa-trash-alt"></i></button>
+            </li>
+
+            <li class="list-group-item row d-flex smallScreen">
+              <div class="col-md-2 col-sm-12 btn text-left">
+                {{getActiveCount()}} items left
+              </div>
+              <div class="col-md-6 col-sm-12 text-center">
+                <button (click)="getAll()" class="btn ">All</button>
+                <button (click)="getActive()" class="btn ">Active</button>
+                <button (click)="getCompleted()" class="btn ">Completed</button>
+              </div>
+              <div class="col-md-4 col-sm-12 text-right">
+                <button class="btn " (click)="clearCompleted()">Clear Completed</button>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
