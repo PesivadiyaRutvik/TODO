@@ -1,0 +1,12 @@
+my-workspace/
+  ...             (workspace-wide config files)
+  projects/       (generated applications and libraries)
+    my-first-app/ --(an explicitly generated application)
+      ...         --(application-specific config)
+      e2e/        ----(corresponding e2e tests)
+         src/     ----(e2e tests source)
+         ...      ----(e2e-specific config)
+      src/        --(source and support files for application)
+    my-lib/       --(a generated library)
+      ...         --(library-specific config)
+      src/        --source and support files for library)
