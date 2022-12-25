@@ -4,6 +4,19 @@
 .small {
   font-size: 12px !important;
 }
+
+.card__background {
+  background-color: aquamarine;
+  height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.gap-10 {
+  gap: 10px;
+}
 @media (max-width:1200px) {
   .smallScreen {
     display: flex !important;
